@@ -1,0 +1,47 @@
+$Id: notes.txt,v 1.2 2002/08/14 13:46:18 clark Exp $
+
+
+Notes for debugging etc.
+
+
+It seems to work ok.
+
+I should also evaluate it with perplexity here;
+
+compare the clusters obtained with the good ones.
+
+
+
+and then smooth it a little 
+
+
+---------------------------
+
+Compare the Neyessen with random intialisation and
+
+
+try only applying morphological information to rare words.
+
+
+
+tag the test corpus and look at the mi, particularly with the zero words
+
+
+-------------
+
+Merging doesn't look good.
+
+Stop
+
+-------------------
+
+Plot the MI against the number of words i.e. 100,000 200,000 etc...
+
+try plotting the MI against counts for freuqnecy 1-10
+log scale for lots of different languages.
+
+HMM try constring it to have entropy < x
+
+ML subject to globale constraint of entropy
+
+

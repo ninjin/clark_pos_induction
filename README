@@ -1,0 +1,52 @@
+This code was used in the paper
+
+@article{clark2003cda,
+  title={{Combining distributional and morphological information for part of speech induction}},
+  author={Clark, A.},
+  journal={Proceedings of 10th EACL},
+  pages={59--66},
+  year={2003}
+}
+
+That would be a good paper to cite if you use this code.
+
+
+This is some code for part of speech induction.
+Its buggy and it isn't very robust -- classic one user research code.
+It doesn't deal well with unicode so you need to map it all to ascii.
+It accepts data in one word per line format.
+
+Use a command line like this:
+
+cluster_neyessenmorph -s 5 -m 5 -i 10 data data 32 > clusters.nem.32
+
+Each binary has some minimal info about what the arguments and options are.
+Run it with no args to get them, but these are probably out of date so look at the source instead.
+
+
+
+The output is a file with each line of the form
+
+word class prob
+
+Where class is the class label (0 ... 31), prob is the conditional prob p(w|class).
+
+Edit the makefile to put the binaries somewhere sensible
+
+The binaries are
+
+cluster_baseline:  all the n-1 most frequent words in their own clusters and all the rest in the nth cluster.
+cluster_merge: not relevant
+cluster_neyessen:  Ney Essen clustering
+cluster_traintwohmm: Trains a two level HMM. ie. a HMM where the output function is an interpolation between a multinomial over the set of observed words, and a HMM over strings of letters. 
+
+cluster tag_twohmm: Tags a corpus given a trained two hmm.
+cluster_neyessenmorph: Ney essen clustering plus a morphological term.
+
+
+Any comments etc. welcome.
+
+Alex Clark
+2 August 2005 and Feb 12 2008
+alexc@cs.rhul.ac.uk
+
