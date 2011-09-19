@@ -1,6 +1,6 @@
 # $Id: makefile,v 1.5 2002/08/14 13:46:18 clark Exp $
 
-BINDIR = /home/alexc/bin
+BINDIR = bin
 
 COMPILER = g++
 CDEBUG = -g
@@ -20,25 +20,26 @@ all: $(BINARIES)
 clean:
 	rm *.o
 
+$(BINDIR):
+	mkdir -p $(BINDIR)
 
-
-cluster_neyessen: neyessen.o $(OBJECTS)
+cluster_neyessen: neyessen.o $(OBJECTS) $(BINDIR)
 	$(COMPILER) -o $(BINDIR)/cluster_neyessen neyessen.o $(OBJECTS)
 
-cluster_baseline: baseline.o $(OBJECTS)
+cluster_baseline: baseline.o $(OBJECTS) $(BINDIR)
 	$(COMPILER) -o $(BINDIR)/cluster_baseline baseline.o $(OBJECTS)
 
-cluster_neyessenmorph: neyessenmorph.o  $(OBJECTS)
+cluster_neyessenmorph: neyessenmorph.o  $(OBJECTS) $(BINDIR)
 	$(COMPILER) -o $(BINDIR)/$@ $< $(OBJECTS)
 
-cluster_perplexity: perplexity.o $(OBJECTS)
+cluster_perplexity: perplexity.o $(OBJECTS) $(BINDIR)
 	$(COMPILER) -o $(BINDIR)/cluster_perplexity perplexity.o $(OBJECTS)
 
-cluster_merge: merge.o $(OBJECTS)
+cluster_merge: merge.o $(OBJECTS) $(BINDIR)
 	$(COMPILER) -o $(BINDIR)/cluster_merge merge.o $(OBJECTS)
 
-cluster_traintwohmm: traintwohmm.o $(OBJECTS)
+cluster_traintwohmm: traintwohmm.o $(OBJECTS) $(BINDIR)
 	$(COMPILER) -o $(BINDIR)/cluster_traintwohmm traintwohmm.o $(OBJECTS)
 
-cluster_tagtwohmm: tagtwohmm.o $(OBJECTS)
+cluster_tagtwohmm: tagtwohmm.o $(OBJECTS) $(BINDIR)
 	$(COMPILER) -o $(BINDIR)/cluster_tagtwohmm tagtwohmm.o $(OBJECTS)
