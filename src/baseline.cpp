@@ -8,6 +8,7 @@
 #include <iostream>
 #include "simplecorpus.h"
 #include "clusters.h"
+#include <cstdlib>
 
 using namespace std;
 

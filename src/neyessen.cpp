@@ -7,7 +7,7 @@
 
 
 
-
+#include <cstdlib>
 #include <iostream>
 #include "simplecorpus.h"
 #include "clusters.h"

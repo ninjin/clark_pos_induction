@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <map>
 #include <string>
+#include <cstdlib>
+#include <string.h>
 
 /**
  * $Id: twohmm.cpp,v 1.6 2002/08/14 13:46:18 clark Exp $

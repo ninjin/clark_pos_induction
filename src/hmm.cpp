@@ -1,5 +1,7 @@
 #include <math.h>
 #include <iostream>
+#include <cstdlib>
+#include <string.h>
 
 /**
  * $Id: hmm.cpp,v 1.5 2002/06/09 16:16:12 clark Exp $
