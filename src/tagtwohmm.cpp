@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 {
   char ch;                   /* to hold command line option */
   //  char *optstr = "sf:v:3@"; 
-  char* optstr = "h";
+  const char* optstr = "h";
 
   while( -1 != (ch=getopt(argc,argv,optstr))) {
     switch(ch) {
