@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 {
   char ch;                   /* to hold command line option */
   //  char *optstr = "sf:v:3@"; 
-  const char* optstr = "n:s:i:rhm:f:";
+  char* optstr = "n:s:i:rhm:f:";
   int numberStates = 32;
   int numberSubStates = 6;
 

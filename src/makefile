@@ -5,7 +5,7 @@ BINDIR = bin
 COMPILER = g++
 CDEBUG = -g
 #CXXFLAGS = $(CDEBUG)  -Wall -O3 -DNDEBUG
-CXXFLAGS = -g -Wall -O3
+CXXFLAGS =  -Wall 
 
 OBJECTS = matrix.o clusters.o simplecorpus.o hmm.o twohmm.o
 BINARIES = cluster_neyessen cluster_baseline cluster_neyessenmorph cluster_perplexity cluster_merge  \
@@ -24,22 +24,22 @@ $(BINDIR):
 	mkdir -p $(BINDIR)
 
 cluster_neyessen: neyessen.o $(OBJECTS) $(BINDIR)
-	$(COMPILER) -O3 -o $(BINDIR)/cluster_neyessen neyessen.o $(OBJECTS) -lpthread
+	$(COMPILER) -o $(BINDIR)/cluster_neyessen neyessen.o $(OBJECTS)
 
 cluster_baseline: baseline.o $(OBJECTS) $(BINDIR)
-	$(COMPILER) -O3 -o $(BINDIR)/cluster_baseline baseline.o $(OBJECTS) -lpthread
+	$(COMPILER) -o $(BINDIR)/cluster_baseline baseline.o $(OBJECTS)
 
 cluster_neyessenmorph: neyessenmorph.o  $(OBJECTS) $(BINDIR)
-	$(COMPILER) -O3 -o $(BINDIR)/$@ $< $(OBJECTS) -lpthread
+	$(COMPILER) -o $(BINDIR)/$@ $< $(OBJECTS)
 
 cluster_perplexity: perplexity.o $(OBJECTS) $(BINDIR)
-	$(COMPILER) -O3 -o $(BINDIR)/cluster_perplexity perplexity.o $(OBJECTS) -lpthread
+	$(COMPILER) -o $(BINDIR)/cluster_perplexity perplexity.o $(OBJECTS)
 
 cluster_merge: merge.o $(OBJECTS) $(BINDIR)
-	$(COMPILER) -O3 -o $(BINDIR)/cluster_merge merge.o $(OBJECTS) -lpthread
+	$(COMPILER) -o $(BINDIR)/cluster_merge merge.o $(OBJECTS)
 
 cluster_traintwohmm: traintwohmm.o $(OBJECTS) $(BINDIR)
-	$(COMPILER) -O3 -o $(BINDIR)/cluster_traintwohmm traintwohmm.o $(OBJECTS) -lpthread
+	$(COMPILER) -o $(BINDIR)/cluster_traintwohmm traintwohmm.o $(OBJECTS)
 
 cluster_tagtwohmm: tagtwohmm.o $(OBJECTS) $(BINDIR)
-	$(COMPILER) -O3 -o $(BINDIR)/cluster_tagtwohmm tagtwohmm.o $(OBJECTS) -lpthread
+	$(COMPILER) -o $(BINDIR)/cluster_tagtwohmm tagtwohmm.o $(OBJECTS)
