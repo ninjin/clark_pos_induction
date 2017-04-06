@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 {
   char ch;                   /* to hold command line option */
   //  char *optstr = "sf:v:i:3@"; 
-  char* optstr = "m:i:rhp:";
+ const char *optstr = "m:i:rhp:";
 
   /* 
    * the option string will be passed to getopt(3), the format
