@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
 {
   int numberStates = 6;
   char ch;
-  char * optstr = "xhs:m:i:rtp:"; 
+  const char * optstr = "xhs:m:i:rtp:"; 
   while( -1 != (ch=getopt(argc,argv,optstr))) {
     switch(ch) {
     case 'h':
